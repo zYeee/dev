@@ -9,6 +9,8 @@ inoremap <C-k> <End>
 set shiftwidth=4
 set ts=4
 set expandtab
+set cursorline
+color torte
 
 func! Complie()
 	exec "w"
@@ -70,11 +72,17 @@ endfunc
 
 set nocompatible              " be iMproved
 filetype off                  " required!
+filetype plugin on
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/Auto-Pairs'
+Bundle 'vim-scripts/Pydiction'
+"Bundle 'nathanaelkane/vim-indent-guides'
 filetype plugin indent on     " required!
 
 let g:ycm_confirm_extra_conf=0
+
+let g:pydiction_location = '/home/zhuye/.vim/bundle/Pydiction/complete-dict'
+
