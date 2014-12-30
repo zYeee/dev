@@ -11,7 +11,9 @@ set shiftwidth=4
 set ts=4
 set expandtab
 set cursorline
-color torte
+
+set t_Co=256
+color wombat256mod
 
 func! Complie()
 	exec "w"
@@ -85,6 +87,8 @@ Bundle 'vim-scripts/Pydiction'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/winmanager'
 Bundle 'scrooloose/nerdtree'
+Bundle 'vim-scripts/AutoComplPop'
+Bundle 'newzealandpaul/wombat256mod'
 "Bundle 'majutsushi/tagbar'
 "Bundle 'nathanaelkane/vim-indent-guides'
 filetype plugin indent on     " required!
@@ -96,6 +100,8 @@ let g:pydiction_location = '/home/zhuye/.vim/bundle/Pydiction/complete-dict'
 let g:NERDTree_title="[NERDTree]"
 let g:winManagerWindowLayout="NERDTree|TagList"
 let g:winManagerWidth = 50
+
+let g:AutoComplPop_IgnoreCaseOption=1
 
 function! NERDTree_Start()
     exec 'NERDTree'
