@@ -1,7 +1,8 @@
-map <F2> :NERDTreeToggle<CR>
+"map <F2> :NERDTreeToggle<CR>
+map <F2> :WMToggle<CR>
 map <F3> :call Complie()<CR>
 map <F12> :cn<CR>
-map <F5> :!ctags --tag-relative=yes -f /tags -R *
+map <F5> :!ctags -R *<CR>
 map <F6> :!php -l %<CR>
 inoremap <C-j> <Home>
 inoremap <C-k> <End>
@@ -74,11 +75,17 @@ set nocompatible              " be iMproved
 filetype off                  " required!
 filetype plugin on
 
+
+"git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/Auto-Pairs'
 Bundle 'vim-scripts/Pydiction'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'vim-scripts/winmanager'
+Bundle 'scrooloose/nerdtree'
+"Bundle 'majutsushi/tagbar'
 "Bundle 'nathanaelkane/vim-indent-guides'
 filetype plugin indent on     " required!
 
@@ -86,3 +93,24 @@ let g:ycm_confirm_extra_conf=0
 
 let g:pydiction_location = '/home/zhuye/.vim/bundle/Pydiction/complete-dict'
 
+let g:NERDTree_title="[NERDTree]"
+let g:winManagerWindowLayout="NERDTree|TagList"
+let g:winManagerWidth = 50
+
+function! NERDTree_Start()
+    exec 'NERDTree'
+endfunction
+
+function! NERDTree_IsValid()
+    return 1
+endfunction
+
+" bug:在~/.vim/plugin目录下的winmanager.vim文件中找到以下函数定义并在第5行下添加第6行的内容：
+"     function! <SID>ToggleWindowsManager()
+"        if IsWinManagerVisible()
+"           call s:CloseWindowsManager()
+"        else
+"           call s:StartWindowsManager()
+"           exe 'q'
+"        end
+"     endfunction
