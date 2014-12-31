@@ -4,8 +4,11 @@ map <F3> :call Complie()<CR>
 map <F12> :cn<CR>
 map <F5> :!ctags -R *<CR>
 map <F6> :!php -l %<CR>
-inoremap <C-j> <Home>
-inoremap <C-k> <End>
+map <C-a> :DoxAuthor<CR>
+map <C-f> :Dox<CR>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
 
 set shiftwidth=4
 set ts=4
@@ -34,44 +37,44 @@ func! Complie()
 	endif
 endfunc
 
-autocmd BufNewFile *.[ch],*.hpp,*.cpp exec ":call SetTitle()" 
-autocmd BufNewFile *.py exec ":call SetPyTitle()" 
-autocmd BufNewFile *.php exec ":call SetPhpTitle()" 
-
-func SetTitle()
-    call setline(1,"  /********************************************************") 
-    call append(line("."), "  *   Copyright (C) ".strftime("%Y")." All rights reserved.")
-    call append(line(".")+1, "  *   ") 
-    call append(line(".")+2, "  *   Filename:".expand("%:t")) 
-    call append(line(".")+3, "  *   Author  :zhuye")
-    call append(line(".")+4, "  *   Date    :".strftime("%Y-%m-%d")) 
-    call append(line(".")+5, "  *   Describe:") 
-    call append(line(".")+6, "  *")
-    call append(line(".")+7, "  ********************************************************/") 
-endfunc
-
-func SetPhpTitle()
-    call setline(1,"<?php") 
-    call append(line("."),   "  /********************************************************")
-    call append(line(".")+1, "  *   Copyright (C) ".strftime("%Y")." All rights reserved.")
-    call append(line(".")+2, "  *   ") 
-    call append(line(".")+3, "  *   Filename:".expand("%:t")) 
-    call append(line(".")+4, "  *   Author  :zhuye")
-    call append(line(".")+5, "  *   Date    :".strftime("%Y-%m-%d")) 
-    call append(line(".")+6, "  *   Describe:") 
-    call append(line(".")+7, "  *")
-    call append(line(".")+8, "  ********************************************************/") 
-endfunc
-
-func SetPyTitle()
-    call setline(1,"'''") 
-    call append(line("."),   "  Copyright (C) ".strftime("%Y")." All rights reserved." )
-    call append(line(".")+1, "  Filename:".expand("%:t")) 
-    call append(line(".")+2, "  Author  :zhuye")
-    call append(line(".")+3, "  Date    :".strftime("%Y-%m-%d")) 
-    call append(line(".")+4, "  Describe:") 
-    call append(line(".")+5, "'''") 
-endfunc
+"autocmd BufNewFile *.[ch],*.hpp,*.cpp exec ":call SetTitle()" 
+"autocmd BufNewFile *.py exec ":call SetPyTitle()" 
+"autocmd BufNewFile *.php exec ":call SetPhpTitle()" 
+"
+"func SetTitle()
+"    call setline(1,"  /********************************************************") 
+"    call append(line("."), "  *   Copyright (C) ".strftime("%Y")." All rights reserved.")
+"    call append(line(".")+1, "  *   ") 
+"    call append(line(".")+2, "  *   Filename:".expand("%:t")) 
+"    call append(line(".")+3, "  *   Author  :zhuye")
+"    call append(line(".")+4, "  *   Date    :".strftime("%Y-%m-%d")) 
+"    call append(line(".")+5, "  *   Describe:") 
+"    call append(line(".")+6, "  *")
+"    call append(line(".")+7, "  ********************************************************/") 
+"endfunc
+"
+"func SetPhpTitle()
+"    call setline(1,"<?php") 
+"    call append(line("."),   "  /********************************************************")
+"    call append(line(".")+1, "  *   Copyright (C) ".strftime("%Y")." All rights reserved.")
+"    call append(line(".")+2, "  *   ") 
+"    call append(line(".")+3, "  *   Filename:".expand("%:t")) 
+"    call append(line(".")+4, "  *   Author  :zhuye")
+"    call append(line(".")+5, "  *   Date    :".strftime("%Y-%m-%d")) 
+"    call append(line(".")+6, "  *   Describe:") 
+"    call append(line(".")+7, "  *")
+"    call append(line(".")+8, "  ********************************************************/") 
+"endfunc
+"
+"func SetPyTitle()
+"    call setline(1,"'''") 
+"    call append(line("."),   "  Copyright (C) ".strftime("%Y")." All rights reserved." )
+"    call append(line(".")+1, "  Filename:".expand("%:t")) 
+"    call append(line(".")+2, "  Author  :zhuye")
+"    call append(line(".")+3, "  Date    :".strftime("%Y-%m-%d")) 
+"    call append(line(".")+4, "  Describe:") 
+"    call append(line(".")+5, "'''") 
+"endfunc
 
 set nocompatible              " be iMproved
 filetype off                  " required!
@@ -89,19 +92,33 @@ Bundle 'vim-scripts/winmanager'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/AutoComplPop'
 Bundle 'newzealandpaul/wombat256mod'
+Bundle 'vim-scripts/DoxygenToolkit.vim'
 "Bundle 'majutsushi/tagbar'
 "Bundle 'nathanaelkane/vim-indent-guides'
 filetype plugin indent on     " required!
 
+"YouCompleteMe
 let g:ycm_confirm_extra_conf=0
 
+"Pydiction
 let g:pydiction_location = '/home/zhuye/.vim/bundle/Pydiction/complete-dict'
 
+"winmanaget
 let g:NERDTree_title="[NERDTree]"
 let g:winManagerWindowLayout="NERDTree|TagList"
 let g:winManagerWidth = 50
 
+"acp
 let g:AutoComplPop_IgnoreCaseOption=1
+
+"DoxygenToolkit
+let g:DoxygenToolkit_authorName="zhuye,yformat930@126.com"
+let s:licenseTag = "Copyright(C)\<enter>"
+let s:licenseTag = s:licenseTag . "For free\<enter>"
+let s:licenseTag = s:licenseTag . "All right reserved\<enter>"
+let g:DoxygenToolkit_licenseTag = s:licenseTag
+let g:DoxygenToolkit_briefTag_funcName="yes"
+let g:doxygen_enhanced_color=1
 
 function! NERDTree_Start()
     exec 'NERDTree'
