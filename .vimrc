@@ -156,9 +156,8 @@ endfunction
 "        end
 "     endfunction
 
-
+"python-mode
 let g:pymode_run_bind = "<C-r>"
 let g:pymode_doc_bind = "<C-d>"
-
 let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
