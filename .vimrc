@@ -29,7 +29,17 @@ func! Complie()
 		else 
 			copen
 		" %在vim中代表当前文件名，%<代表不含扩展名的文件名
-		endif
+        endif
+    elseif &filetype == 'c'
+		set makeprg=gcc\ -o\ %<\ %
+        silent make
+        let file = expand("%:r")
+        if filereadable(file)
+			exec "!./%< && rm %<"
+		else 
+			copen
+		" %在vim中代表当前文件名，%<代表不含扩展名的文件名
+        endif
 	elseif (&filetype=='python')
 		exec "!python %"
 	elseif (&filetype == 'php')
