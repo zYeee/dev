@@ -20,7 +20,7 @@ inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
 autocmd VimEnter * nested :call tagbar#autoopen(1)
-autocmd VimEnter * NERDTreeToggle
+"autocmd VimEnter * NERDTreeTabsToggle
 
 set shiftwidth=4
 set ts=4
@@ -111,6 +111,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
 Bundle 'klen/python-mode'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'jistr/vim-nerdtree-tabs'
 "Bundle 'nathanaelkane/vim-indent-guides'
 filetype plugin indent on     " required!
 
@@ -163,3 +164,6 @@ let g:pymode_run_bind = "<C-r>"
 let g:pymode_doc_bind = "<C-d>"
 let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
+
+"nerdtreeTab
+let g:nerdtree_tabs_open_on_console_startup = 1
