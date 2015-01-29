@@ -1,14 +1,26 @@
-"map <F2> :NERDTreeToggle<CR>
-map <F2> :WMToggle<CR>
-map <F3> :call Complie()<CR>
-map <F12> :cn<CR>
-map <F5> :!ctags -R *<CR>
-map <F6> :!php -l %<CR>
-map <C-a> :DoxAuthor<CR>
-map <C-f> :Dox<CR>
+"map <F2>         : NERDTreeToggle<CR>
+"map <F2>         : WMToggle<CR>
+map <silent> <F2>          : Tagbar<CR>
+map <F3>          : call Complie()<CR>
+map <silent> <F4> : Tab/=<CR>
+map <F12>         : cn<CR>
+map <F5>          : !ctags -R *<CR>
+map <F6>          : !php -l %<CR>
+map <C-a>         : DoxAuthor<CR>
+map <C-f>         : Dox<CR>
+
+map <c-h> <c-w>h
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+
+imap jj <Esc><Right>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
+
+autocmd VimEnter * nested :call tagbar#autoopen(1)
+"autocmd VimEnter * NERDTreeTabsToggle
 
 set shiftwidth=4
 set ts=4
@@ -48,7 +60,7 @@ func! Complie()
 endfunc
 
 "autocmd BufNewFile *.[ch],*.hpp,*.cpp exec ":call SetTitle()" 
-"autocmd BufNewFile *.py exec ":call SetPyTitle()" 
+autocmd BufNewFile *.py exec ":call SetPyTitle()" 
 "autocmd BufNewFile *.php exec ":call SetPhpTitle()" 
 "
 "func SetTitle()
@@ -76,15 +88,16 @@ endfunc
 "    call append(line(".")+8, "  ********************************************************/") 
 "endfunc
 "
-"func SetPyTitle()
-"    call setline(1,"'''") 
+func SetPyTitle()
+     call setline(1,"#!/usr/bin/python")
+     call append(line("."),   "# -*- coding: utf-8 -*-")
 "    call append(line("."),   "  Copyright (C) ".strftime("%Y")." All rights reserved." )
 "    call append(line(".")+1, "  Filename:".expand("%:t")) 
 "    call append(line(".")+2, "  Author  :zhuye")
 "    call append(line(".")+3, "  Date    :".strftime("%Y-%m-%d")) 
 "    call append(line(".")+4, "  Describe:") 
 "    call append(line(".")+5, "'''") 
-"endfunc
+endfunc
 
 set nocompatible              " be iMproved
 filetype off                  " required!
@@ -98,12 +111,17 @@ call vundle#rc()
 Bundle 'vim-scripts/Auto-Pairs'
 Bundle 'vim-scripts/Pydiction'
 Bundle 'vim-scripts/taglist.vim'
-Bundle 'vim-scripts/winmanager'
+"Bundle 'vim-scripts/winmanager'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/AutoComplPop'
 Bundle 'newzealandpaul/wombat256mod'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
-"Bundle 'majutsushi/tagbar'
+Bundle 'othree/xml.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'majutsushi/tagbar'
+Bundle 'klen/python-mode'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'jistr/vim-nerdtree-tabs'
 "Bundle 'nathanaelkane/vim-indent-guides'
 filetype plugin indent on     " required!
 
@@ -120,6 +138,9 @@ let g:winManagerWidth = 50
 
 "acp
 let g:AutoComplPop_IgnoreCaseOption=1
+
+"tagbar
+let g:tagbar_width=30
 
 "DoxygenToolkit
 let g:DoxygenToolkit_authorName="zhuye,yformat930@126.com"
@@ -147,3 +168,12 @@ endfunction
 "           exe 'q'
 "        end
 "     endfunction
+
+"python-mode
+let g:pymode_run_bind = "<C-r>"
+let g:pymode_doc_bind = "<C-d>"
+let g:pymode_rope_completion = 0
+let g:pymode_rope_complete_on_dot = 0
+
+"nerdtreeTab
+let g:nerdtree_tabs_open_on_console_startup = 1
