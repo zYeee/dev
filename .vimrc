@@ -1,5 +1,6 @@
-map <F2> :NERDTreeToggle<CR>
-"map <F2> :WMToggle<CR>
+"map <F2>         : NERDTreeToggle<CR>
+"map <F2>         : WMToggle<CR>
+map <silent> <F2>          : Tagbar<CR>
 map <F3>          : call Complie()<CR>
 map <silent> <F4> : Tab/=<CR>
 map <F12>         : cn<CR>
@@ -109,6 +110,7 @@ Bundle 'othree/xml.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
 Bundle 'klen/python-mode'
+Bundle 'terryma/vim-multiple-cursors'
 "Bundle 'nathanaelkane/vim-indent-guides'
 filetype plugin indent on     " required!
 
