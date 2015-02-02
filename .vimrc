@@ -26,6 +26,7 @@ set shiftwidth=4
 set ts=4
 set expandtab
 set cursorline
+syntax on
 
 set t_Co=256
 color wombat256mod
