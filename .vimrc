@@ -122,6 +122,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'klen/python-mode'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'scrooloose/syntastic'
 "Bundle 'nathanaelkane/vim-indent-guides'
 filetype plugin indent on     " required!
 
@@ -177,3 +178,7 @@ let g:pymode_rope_complete_on_dot = 0
 
 "nerdtreeTab
 let g:nerdtree_tabs_open_on_console_startup = 1
+
+
+let g:syntastic_check_on_open=1
+let g:syntastic_phpcs_conf = "--tab-width=4 --standard=CodeIgniter"
