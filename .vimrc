@@ -26,6 +26,7 @@ set shiftwidth=4
 set ts=4
 set expandtab
 set cursorline
+set backspace=indent,eol,start
 syntax on
 
 set t_Co=256
@@ -108,13 +109,14 @@ filetype plugin on
 "git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'gmarik/vundle.git'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/Auto-Pairs'
-Bundle 'vim-scripts/Pydiction'
+"Bundle 'vim-scripts/Pydiction'
 Bundle 'vim-scripts/taglist.vim'
 "Bundle 'vim-scripts/winmanager'
 Bundle 'scrooloose/nerdtree'
-Bundle 'vim-scripts/AutoComplPop'
+"Bundle 'vim-scripts/AutoComplPop'
 Bundle 'newzealandpaul/wombat256mod'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'othree/xml.vim'
@@ -128,18 +130,20 @@ Bundle 'scrooloose/syntastic'
 filetype plugin indent on     " required!
 
 "YouCompleteMe
+"echo | clang -std=c++11 -stdlib=libc++ -v -E -x c++ -
 let g:ycm_confirm_extra_conf=0
+let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 
 "Pydiction
-let g:pydiction_location = '/home/zhuye/.vim/bundle/Pydiction/complete-dict'
+"let g:pydiction_location = '/home/zhuye/.vim/bundle/Pydiction/complete-dict'
 
 "winmanaget
-let g:NERDTree_title="[NERDTree]"
-let g:winManagerWindowLayout="NERDTree|TagList"
-let g:winManagerWidth = 50
+"let g:NERDTree_title="[NERDTree]"
+"let g:winManagerWindowLayout="NERDTree|TagList"
+"let g:winManagerWidth = 50
 
 "acp
-let g:AutoComplPop_IgnoreCaseOption=1
+"let g:AutoComplPop_IgnoreCaseOption=1
 
 "tagbar
 let g:tagbar_width=30
@@ -153,13 +157,13 @@ let g:DoxygenToolkit_licenseTag = s:licenseTag
 let g:DoxygenToolkit_briefTag_funcName="yes"
 let g:doxygen_enhanced_color=1
 
-function! NERDTree_Start()
-    exec 'NERDTree'
-endfunction
-
-function! NERDTree_IsValid()
-    return 1
-endfunction
+"function! NERDTree_Start()
+"    exec 'NERDTree'
+"endfunction
+"
+"function! NERDTree_IsValid()
+"    return 1
+"endfunction
 
 " bug:在~/.vim/plugin目录下的winmanager.vim文件中找到以下函数定义并在第5行下添加第6行的内容：
 "     function! <SID>ToggleWindowsManager()
@@ -173,7 +177,7 @@ endfunction
 
 "python-mode
 let g:pymode_run_bind = "<C-r>"
-let g:pymode_doc_bind = "<C-d>"
+let g:pymode_doc_bind = "<C-t>"
 let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
 
