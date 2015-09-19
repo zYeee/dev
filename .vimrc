@@ -61,35 +61,8 @@ func! Complie()
 	endif
 endfunc
 
-"autocmd BufNewFile *.[ch],*.hpp,*.cpp exec ":call SetTitle()" 
 autocmd BufNewFile *.py exec ":call SetPyTitle()" 
-"autocmd BufNewFile *.php exec ":call SetPhpTitle()" 
-"
-"func SetTitle()
-"    call setline(1,"  /********************************************************") 
-"    call append(line("."), "  *   Copyright (C) ".strftime("%Y")." All rights reserved.")
-"    call append(line(".")+1, "  *   ") 
-"    call append(line(".")+2, "  *   Filename:".expand("%:t")) 
-"    call append(line(".")+3, "  *   Author  :zhuye")
-"    call append(line(".")+4, "  *   Date    :".strftime("%Y-%m-%d")) 
-"    call append(line(".")+5, "  *   Describe:") 
-"    call append(line(".")+6, "  *")
-"    call append(line(".")+7, "  ********************************************************/") 
-"endfunc
-"
-"func SetPhpTitle()
-"    call setline(1,"<?php") 
-"    call append(line("."),   "  /********************************************************")
-"    call append(line(".")+1, "  *   Copyright (C) ".strftime("%Y")." All rights reserved.")
-"    call append(line(".")+2, "  *   ") 
-"    call append(line(".")+3, "  *   Filename:".expand("%:t")) 
-"    call append(line(".")+4, "  *   Author  :zhuye")
-"    call append(line(".")+5, "  *   Date    :".strftime("%Y-%m-%d")) 
-"    call append(line(".")+6, "  *   Describe:") 
-"    call append(line(".")+7, "  *")
-"    call append(line(".")+8, "  ********************************************************/") 
-"endfunc
-"
+
 func SetPyTitle()
      call setline(1,"#!/usr/bin/python")
      call append(line("."),   "# -*- coding: utf-8 -*-")
