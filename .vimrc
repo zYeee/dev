@@ -112,7 +112,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle.git'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/Auto-Pairs'
-"Bundle 'vim-scripts/Pydiction'
 Bundle 'vim-scripts/taglist.vim'
 "Bundle 'vim-scripts/winmanager'
 Bundle 'scrooloose/nerdtree'
@@ -134,8 +133,6 @@ filetype plugin indent on     " required!
 let g:ycm_confirm_extra_conf=0
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 
-"Pydiction
-"let g:pydiction_location = '/home/zhuye/.vim/bundle/Pydiction/complete-dict'
 
 "winmanaget
 "let g:NERDTree_title="[NERDTree]"
