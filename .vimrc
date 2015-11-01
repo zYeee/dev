@@ -83,12 +83,11 @@ filetype plugin on
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle.git'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/Auto-Pairs'
 Bundle 'vim-scripts/taglist.vim'
-"Bundle 'vim-scripts/winmanager'
 Bundle 'scrooloose/nerdtree'
-"Bundle 'vim-scripts/AutoComplPop'
+Bundle 'vim-scripts/AutoComplPop'
 Bundle 'newzealandpaul/wombat256mod'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'othree/xml.vim'
@@ -98,6 +97,7 @@ Bundle 'klen/python-mode'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'scrooloose/syntastic'
+Bundle 'mileszs/ack.vim' "http://beyondgrep.com/install/
 "Bundle 'nathanaelkane/vim-indent-guides'
 filetype plugin indent on     " required!
 
