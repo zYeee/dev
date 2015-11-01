@@ -161,3 +161,6 @@ let g:syntastic_phpcs_conf = "--tab-width=4 --standard=CodeIgniter"
 
 "CtrlP
 let g:ctrlp_map = '<c-p>'
+
+"ack
+let g:ack_default_options = " --php --js"
