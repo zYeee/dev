@@ -98,6 +98,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim' "http://beyondgrep.com/install/
+Bundle 'kien/ctrlp.vim'
 "Bundle 'nathanaelkane/vim-indent-guides'
 filetype plugin indent on     " required!
 
@@ -157,3 +158,6 @@ let g:nerdtree_tabs_open_on_console_startup = 1
 
 let g:syntastic_check_on_open=1
 let g:syntastic_phpcs_conf = "--tab-width=4 --standard=CodeIgniter"
+
+"CtrlP
+let g:ctrlp_map = '<c-p>'
