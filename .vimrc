@@ -22,8 +22,8 @@ inoremap <C-l> <Right>
 autocmd VimEnter * nested :call tagbar#autoopen(1)
 "autocmd VimEnter * NERDTreeTabsToggle
 
-set shiftwidth=4
-set ts=4
+set shiftwidth=2
+set ts=2
 set expandtab
 set cursorline
 set backspace=indent,eol,start
@@ -64,14 +64,8 @@ endfunc
 autocmd BufNewFile *.py exec ":call SetPyTitle()" 
 
 func SetPyTitle()
-     call setline(1,"#!/usr/bin/python")
+     call setline(1,"#!/usr/bin/python2.7")
      call append(line("."),   "# -*- coding: utf-8 -*-")
-"    call append(line("."),   "  Copyright (C) ".strftime("%Y")." All rights reserved." )
-"    call append(line(".")+1, "  Filename:".expand("%:t")) 
-"    call append(line(".")+2, "  Author  :zhuye")
-"    call append(line(".")+3, "  Date    :".strftime("%Y-%m-%d")) 
-"    call append(line(".")+4, "  Describe:") 
-"    call append(line(".")+5, "'''") 
 endfunc
 
 set nocompatible              " be iMproved
@@ -97,10 +91,12 @@ Bundle 'klen/python-mode'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'scrooloose/syntastic'
-Bundle 'mileszs/ack.vim'
+Bundle 'mileszs/ack.vim' 
 Bundle 'kien/ctrlp.vim'
+Bundle 'aceofall/gtags.vim'
 "Bundle 'nathanaelkane/vim-indent-guides'
-"ack:http://beyondgrep.com/install/
+"ack: http://beyondgrep.com/install/
+"gtags: http://www.gnu.org/software/global/globaldoc_toc.html
 filetype plugin indent on     " required!
 
 "YouCompleteMe
@@ -164,4 +160,12 @@ let g:syntastic_phpcs_conf = "--tab-width=4 --standard=CodeIgniter"
 let g:ctrlp_map = '<c-p>'
 
 "ack
-let g:ack_default_options = " --php --js"
+let g:ack_default_options = " --php"
+
+"gtags
+set cscopetag
+set cscopeprg='gtags-cscope'
+
+let GtagsCscope_Auto_Load = 1
+let CtagsCscope_Auto_Map = 1
+let GtagsCscope_Quiet = 1
