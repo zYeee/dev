@@ -97,9 +97,10 @@ Bundle 'klen/python-mode'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'scrooloose/syntastic'
-Bundle 'mileszs/ack.vim' "http://beyondgrep.com/install/
+Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'nathanaelkane/vim-indent-guides'
+"ack:http://beyondgrep.com/install/
 filetype plugin indent on     " required!
 
 "YouCompleteMe
