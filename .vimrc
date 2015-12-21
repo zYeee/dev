@@ -4,7 +4,7 @@ map <silent> <F2>          : Tagbar<CR>
 map <F3>          : call Complie()<CR>
 map <silent> <F4> : Tab/=<CR>
 map <F12>         : cn<CR>
-map <F5>          : !ctags -R *<CR>
+map <F5>          : GitGutterToggle<CR>
 map <F6>          : !php -l %<CR>
 map <C-a>         : DoxAuthor<CR>
 map <C-f>         : Dox<CR>
@@ -94,6 +94,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim' 
 Bundle 'kien/ctrlp.vim'
 Bundle 'aceofall/gtags.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
 "Bundle 'nathanaelkane/vim-indent-guides'
 "ack: http://beyondgrep.com/install/
 "gtags: http://www.gnu.org/software/global/globaldoc_toc.html
