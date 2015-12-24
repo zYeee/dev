@@ -63,6 +63,8 @@ endfunc
 
 autocmd BufNewFile *.py exec ":call SetPyTitle()" 
 
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+
 func SetPyTitle()
      call setline(1,"#!/usr/bin/python2.7")
      call append(line("."),   "# -*- coding: utf-8 -*-")
