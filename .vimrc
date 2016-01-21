@@ -1,6 +1,6 @@
 "map <F2>         : NERDTreeToggle<CR>
 "map <F2>         : WMToggle<CR>
-map <silent> <F2>          : Tagbar<CR>
+map <silent> <F2> : Tagbar<CR>
 map <F3>          : call Complie()<CR>
 map <silent> <F4> : Tab/=<CR>
 map <F12>         : cn<CR>
@@ -8,6 +8,18 @@ map <F5>          : GitGutterToggle<CR>
 map <F6>          : !php -l %<CR>
 map <C-a>         : DoxAuthor<CR>
 map <C-f>         : Dox<CR>
+
+nmap 1 1gt
+nmap 2 2gt
+nmap 3 3gt
+nmap 4 4gt
+nmap 5 5gt
+nmap 6 6gt
+nmap 7 7gt
+nmap 8 8gt
+nmap 9 9gt
+nmap h gT
+nmap l gt
 
 map <c-h> <c-w>h
 map <c-j> <c-w>j
@@ -64,6 +76,7 @@ endfunc
 autocmd BufNewFile *.py exec ":call SetPyTitle()" 
 
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType html set omnifunc=xmlcomplete#CompleteTags
 
 func SetPyTitle()
      call setline(1,"#!/usr/bin/python2.7")
