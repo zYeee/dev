@@ -9,17 +9,8 @@ map <F6>          : !php -l %<CR>
 map <C-a>         : DoxAuthor<CR>
 map <C-f>         : Dox<CR>
 
-nmap 1 1gt
-nmap 2 2gt
-nmap 3 3gt
-nmap 4 4gt
-nmap 5 5gt
-nmap 6 6gt
-nmap 7 7gt
-nmap 8 8gt
-nmap 9 9gt
-nmap h gT
-nmap l gt
+nmap H gT
+nmap L gt
 
 map <c-h> <c-w>h
 map <c-j> <c-w>j
