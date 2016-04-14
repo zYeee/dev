@@ -3,7 +3,7 @@
 map <silent> <F2> : Tagbar<CR>
 map <F3>          : call Complie()<CR>
 map <silent> <F4> : Tab/=<CR>
-map <F12>         : cn<CR>
+map <F12>         : !send<CR>
 map <F5>          : GitGutterToggle<CR>
 map <F6>          : !php -l %<CR>
 map <C-a>         : DoxAuthor<CR>
@@ -25,10 +25,13 @@ inoremap <C-l> <Right>
 autocmd VimEnter * nested :call tagbar#autoopen(1)
 "autocmd VimEnter * NERDTreeTabsToggle
 
+set hls
+" highlight
 set shiftwidth=2
 set ts=2
 set expandtab
 set cursorline
+set ignorecase
 set backspace=indent,eol,start
 syntax on
 
