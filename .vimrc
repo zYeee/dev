@@ -105,7 +105,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'aceofall/gtags.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
-"Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'gregsexton/gitv'
 "ack: http://beyondgrep.com/install/
 "gtags: http://www.gnu.org/software/global/globaldoc_toc.html
 filetype plugin indent on     " required!
