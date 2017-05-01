@@ -24,6 +24,10 @@ inoremap <C-l> <Right>
 
 let mapleader=";"
 
+map <leader>y "+y
+map <leader>p "+p
+
+
 autocmd VimEnter * nested :call tagbar#autoopen(1)
 "autocmd VimEnter * NERDTreeTabsToggle
 
