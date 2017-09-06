@@ -22,6 +22,12 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
+let mapleader=";"
+
+map <leader>y "+y
+map <leader>p "+p
+
+
 autocmd VimEnter * nested :call tagbar#autoopen(1)
 "autocmd VimEnter * NERDTreeTabsToggle
 
@@ -32,11 +38,14 @@ set ts=2
 set expandtab
 set cursorline
 set ignorecase
+set cc=80
 set backspace=indent,eol,start
 syntax on
 
-set t_Co=256
-color wombat256mod
+"set t_Co=16
+"colorscheme wombat256mod
+set background=dark
+colorscheme solarized
 
 func! Complie()
 	exec "w"
@@ -89,6 +98,8 @@ Bundle 'gmarik/vundle.git'
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/Auto-Pairs'
 Bundle 'vim-scripts/taglist.vim'
+"Bundle 'vim-scripts/php_localvarcheck.vim'
+"Bundle 'joonty/vim-phpqa'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/AutoComplPop'
 Bundle 'newzealandpaul/wombat256mod'
@@ -96,19 +107,26 @@ Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'othree/xml.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
-Bundle 'klen/python-mode'
+"Bundle 'klen/python-mode'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
+Bundle 'w0rp/ale'
 Bundle 'mileszs/ack.vim' 
 Bundle 'kien/ctrlp.vim'
 Bundle 'aceofall/gtags.vim'
+"Bundle 'php-vim/phpcd.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'gregsexton/gitv'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'easymotion/vim-easymotion'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'vim-flake8'
+Bundle'altercation/vim-colors-solarized'
 "ack: http://beyondgrep.com/install/
 "gtags: http://www.gnu.org/software/global/globaldoc_toc.html
+"phpmd: wget -c http://static.phpmd.org/php/latest/phpmd.phar
 filetype plugin indent on     " required!
 
 "YouCompleteMe
@@ -181,3 +199,5 @@ set cscopeprg='gtags-cscope'
 let GtagsCscope_Auto_Load = 1
 let CtagsCscope_Auto_Map = 1
 let GtagsCscope_Quiet = 1
+
+let g:solarized_termtrans = 1
