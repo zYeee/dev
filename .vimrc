@@ -42,8 +42,10 @@ set cc=80
 set backspace=indent,eol,start
 syntax on
 
-set t_Co=256
-colorscheme wombat256mod
+set t_Co=16
+"colorscheme wombat256mod
+set background=dark
+colorscheme solarized
 
 func! Complie()
 	exec "w"
@@ -105,10 +107,11 @@ Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'othree/xml.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
-Bundle 'klen/python-mode'
+"Bundle 'klen/python-mode'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
+Bundle 'w0rp/ale'
 Bundle 'mileszs/ack.vim' 
 Bundle 'kien/ctrlp.vim'
 Bundle 'aceofall/gtags.vim'
@@ -118,6 +121,9 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'gregsexton/gitv'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'easymotion/vim-easymotion'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'vim-flake8'
+Bundle'altercation/vim-colors-solarized'
 "ack: http://beyondgrep.com/install/
 "gtags: http://www.gnu.org/software/global/globaldoc_toc.html
 "phpmd: wget -c http://static.phpmd.org/php/latest/phpmd.phar
@@ -194,3 +200,4 @@ let GtagsCscope_Auto_Load = 1
 let CtagsCscope_Auto_Map = 1
 let GtagsCscope_Quiet = 1
 
+let g:solarized_termtrans = 1
