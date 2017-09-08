@@ -42,7 +42,7 @@ set cc=80
 set backspace=indent,eol,start
 syntax on
 
-set t_Co=16
+"set t_Co=16
 "colorscheme wombat256mod
 set background=dark
 colorscheme solarized
@@ -70,7 +70,7 @@ func! Complie()
 		" %在vim中代表当前文件名，%<代表不含扩展名的文件名
         endif
 	elseif (&filetype=='python')
-		exec "!python %"
+		exec "!python3 %"
 	elseif (&filetype == 'php')
 		exec "!php %"
 	endif
@@ -123,7 +123,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'vim-flake8'
-Bundle'altercation/vim-colors-solarized'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tell-k/vim-autopep8' "pip install autopep8
 "ack: http://beyondgrep.com/install/
 "gtags: http://www.gnu.org/software/global/globaldoc_toc.html
 "phpmd: wget -c http://static.phpmd.org/php/latest/phpmd.phar
