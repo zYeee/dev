@@ -8,6 +8,7 @@ map <F5>          : GitGutterToggle<CR>
 map <F6>          : !php -l %<CR>
 map <C-a>         : DoxAuthor<CR>
 map <C-f>         : Dox<CR>
+map <C-g>         : NERDTreeFind<CR>
 
 nmap H gT
 nmap L gt
@@ -124,10 +125,13 @@ Bundle 'easymotion/vim-easymotion'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'vim-flake8'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'tell-k/vim-autopep8' "pip install autopep8
+Bundle 'tell-k/vim-autopep8' 
+Bundle 'lvht/phpcd.vim'
+"pip install autopep8
 "ack: http://beyondgrep.com/install/
 "gtags: http://www.gnu.org/software/global/globaldoc_toc.html
 "phpmd: wget -c http://static.phpmd.org/php/latest/phpmd.phar
+"for ag: https://github.com/ggreer/the_silver_searcher#installing
 filetype plugin indent on     " required!
 
 "YouCompleteMe
@@ -183,12 +187,9 @@ let g:pymode_rope_complete_on_dot = 0
 "nerdtreeTab
 let g:nerdtree_tabs_open_on_console_startup = 1
 
-
-let g:syntastic_check_on_open=1
-let g:syntastic_phpcs_conf = "--tab-width=4 --standard=CodeIgniter"
-
 "CtrlP
 let g:ctrlp_map = '<c-p>'
+let g:ctrlp_by_filename = 1
 
 "ack
 let g:ack_default_options = " --php"
@@ -202,3 +203,10 @@ let CtagsCscope_Auto_Map = 1
 let GtagsCscope_Quiet = 1
 
 let g:solarized_termtrans = 1
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+endif
